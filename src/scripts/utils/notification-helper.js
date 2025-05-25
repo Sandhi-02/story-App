@@ -38,7 +38,8 @@ export async function requestNotificationPermission() {
 }
 
 export async function getPushSubscription() {
-  const registration = await navigator.serviceWorker.getRegistration();
+  // const registration = await navigator.serviceWorker.getRegistration();
+  const registration = await navigator.serviceWorker.ready;
   return await registration.pushManager.getSubscription();
 }
 
@@ -71,7 +72,8 @@ export async function subscribe() {
   let pushSubscription;
 
   try {
-    const registration = await navigator.serviceWorker.getRegistration();
+    // const registration = await navigator.serviceWorker.getRegistration();
+    const registration = await navigator.serviceWorker.ready;
     pushSubscription = await registration.pushManager.subscribe(generateSubscribeOptions());
 
     const { endpoint, keys } = pushSubscription.toJSON();
