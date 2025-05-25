@@ -72,18 +72,18 @@ registerRoute(
 self.addEventListener('push', (event) => {
   console.log('Service worker pushing...');
 
-  // async function chainPromise() {
-  //   await self.registration.showNotification('ada laporan baru untuk anda!', {
-  //     body: 'terjadi kerusakan lampu jalan di jl melati',
-  //   });
-  // }
   async function chainPromise() {
-    const data = await event.data.json();
-    console.log(data);
-    await self.registration.showNotification(data.listStory.name, {
-      body: data.listStory.description,
+    await self.registration.showNotification('ada laporan baru untuk anda!', {
+      body: 'terjadi kerusakan lampu jalan di jl melati',
     });
   }
+  // async function chainPromise() {
+  //   const data = await event.data.json();
+  //   console.log(data);
+  //   await self.registration.showNotification(data.listStory.name, {
+  //     body: data.listStory.description,
+  //   });
+  // }
 
   event.waitUntil(chainPromise());
 });
