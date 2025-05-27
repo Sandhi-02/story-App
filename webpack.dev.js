@@ -13,7 +13,8 @@ module.exports = merge(common, {
     ],
   },
   devServer: {
-    static: path.resolve(__dirname, 'dist'),
+    // static: path.resolve(__dirname, 'dist'),
+    static: path.resolve(__dirname, 'docs'),
     port: 9081,
     client: {
       overlay: {
