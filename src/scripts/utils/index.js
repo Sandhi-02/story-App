@@ -104,7 +104,7 @@ export async function registerServiceWorker() {
   }
 
   try {
-    const registration = await navigator.serviceWorker.register('/sw.bundle.js');
+    const registration = await navigator.serviceWorker.register('./sw.bundle.js');
     console.log('service Worker telah dipasang', registration);
   } catch (error) {
     console.log('failed to install service worker:', error);
